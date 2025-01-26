@@ -8,16 +8,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGODB_URI);
 
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+db.on('error', console.error.bind(console, 'error'));
 db.once('open', () => {
-  console.log('Connected to MongoDB');
+  console.log('connected to MongoDB');
 });
 
 app.post('/find', async (req, res) => {
@@ -30,10 +26,10 @@ app.post('/find', async (req, res) => {
         { solution: new RegExp(query, 'i') },
       ],
     });
-    console.log('Search Results:', questions); 
+    console.log('results:', questions); 
     res.json({ questions });
   } catch (error) {
-    res.status(500).send({ error: 'Error searching for questions' });
+    res.status(500).send({ error: 'Not Found' });
   }
 });
 

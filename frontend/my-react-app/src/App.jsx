@@ -13,8 +13,8 @@ function App() {
       const res = await axios.post('http://localhost:3000/find', { query: term });
       setResults(res.data.questions);
     } catch (err) {
-      console.error('Error during search:', err);
-      alert('An error occurred while fetching the results.');
+      console.error('Not Found:', err);
+      alert('NOT FOUND');
     } finally {
       setLoading(false);
     }
