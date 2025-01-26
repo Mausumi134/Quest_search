@@ -10,7 +10,7 @@ function App() {
   const handleSearch = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:3000/search', { query: searchTerm });
+      const response = await axios.post('http://localhost:3000/find', { query: searchTerm });
       setSearchResults(response.data.questions);
     } catch (error) {
       console.error('Error during search:', error);

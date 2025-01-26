@@ -20,7 +20,7 @@ db.once('open', () => {
 });
 
 
-app.post('/search', async (req, res) => {
+app.post('/find', async (req, res) => {
   const query = req.body.query;
   try {
     const questions = await Question.find({
