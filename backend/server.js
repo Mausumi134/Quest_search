@@ -2,13 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Question = require('./models/Question');
 const cors = require('cors');
+require('dotenv').config(); 
 
 const app = express();
 app.use(express.json());
-
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/questsearch', {
+
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -18,7 +19,6 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB');
 });
-
 
 app.post('/find', async (req, res) => {
   const query = req.body.query;
@@ -36,7 +36,6 @@ app.post('/find', async (req, res) => {
     res.status(500).send({ error: 'Error searching for questions' });
   }
 });
-
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
