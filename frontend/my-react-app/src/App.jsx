@@ -34,11 +34,11 @@ function App() {
 
 
   let searchContent;
-  if (searchResults.length === 0 && !isLoading) {
+  if (searchResults.length===0 && !isLoading) {
     searchContent = <li className="no-results">No results found.</li>;
   } else {
     searchContent = searchResults.map((question, index) => {
-      if (question.type === 'ANAGRAM') {
+      if (question.type==='ANAGRAM') {
         return (
           <li key={index}>
             <h3>{question.title}</h3>
