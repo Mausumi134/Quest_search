@@ -11,7 +11,7 @@ QuestSearch is a web application that allows users to search programming questio
 git clone https://github.com/Mausumi134/Quest_search.git
 cd Quest
 ```
-
+![Screenshot 2025-01-26 224518](https://github.com/user-attachments/assets/8391ef0c-ab5f-49ec-bf1a-4aa34320bbea)
 ### 2. Backend Setup
 Navigate to the `backend` folder and install dependencies:
 ```bash
@@ -50,5 +50,8 @@ To upload questions to MongoDB:
 2. Use `mongoimport` to upload it to your MongoDB instance:
 ```bash
 mongoimport --db questsearch --collection questions --file path/to/questions.json --jsonArray
+
+
 ```
+
 
