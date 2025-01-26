@@ -32,7 +32,7 @@ function App() {
   }
 
   let content;
-  if (results.length === 0 && !loading) {
+  if (results.length === 0 && loading==NULL) {
     content = <li className="no-results">No results found.</li>;
   } else {
     content = results.map((q, i) => {
