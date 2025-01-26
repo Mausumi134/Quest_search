@@ -63,7 +63,7 @@ function App() {
   }
 
   return (
-    <div className="app-container">
+    <div className="container">
       <div className="sidebar">
         <h1>QuestSearch</h1>
 

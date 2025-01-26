@@ -1,4 +1,4 @@
-/* Global styles */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -6,14 +6,14 @@ body {
   color: #fff;
 }
 
-/* App container */
-.app-container {
+
+.container {
   display: flex;
   height: 100vh;
   width: 100vw;
 }
 
-/* Sidebar */
+
 .sidebar {
   width: 30%;
   background-color: #282c34;
@@ -69,7 +69,7 @@ body {
   color: #bbb;
 }
 
-/* Results Section */
+
 .results {
   width: 70%;
   padding: 20px;
